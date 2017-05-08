@@ -1,0 +1,19 @@
+---
+- name: APM | Download the Java agent
+  command: 'wget {{mon_apm_download}} -P {{ base_path }}'
+  tags: ['newrelic', 'newrelic_apm', 'newrelic_apm_download']
+
+- name: APM | Extract the Java agent
+  command: "unzip -o {{base_path}}/{{ mon_apm_file }} -d {{ base_path }}"
+# unarchive: remote_src=yes src="{{base_path}}/{{ mon_apm_file }}" dest={{ base_path }}
+  tags: ['newrelic', 'newrelic_apm']
+
+- name: APM | Configure the Java agent
+  template: src=newrelic.yml.j2 dest={{ newrelic_path }}/newrelic.yml
+  tags: ['newrelic', 'newrelic_apm']
+
+- name: Change ownership NewRelic Folder
+  file: path={{ newrelic_path }} owner=ubuntu group=ubuntu
+
+#- debug: msg='Remember to add the javaagent to your JVM environment variables'
+#- debug: msg='-javaagent: {{ mon_apm_jar_path }}'
