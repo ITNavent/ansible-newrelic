@@ -2,7 +2,7 @@
 # DEBIAN/UBUNTU TASKS
 - name: Server | Debian/Ubuntu | Add the New Relic apt repository
   shell: '{{ item }}'
-  with_items: mon_server_cmd
+  with_items: "{{ mon_server_cmd }}"
   when: ansible_pkg_mgr == 'apt'
   tags: ['newrelic', 'newrelic_server']
 
