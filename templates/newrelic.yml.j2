@@ -1,3 +1,4 @@
+#jinja2: trim_blocks:False
 # This file configures the New Relic Agent.  New Relic monitors
 # Java applications with deep visibility and low overhead.  For more details and additional
 # configuration options visit https://docs.newrelic.com/docs/java/java-agent-configuration.
@@ -49,8 +50,8 @@ common: &default_settings
 
   error_collector:
     enabled: true
-    ignore_errors: akka.actor.ActorKilledException
-    ignore_status_codes: 404
+    ignore_errors: akka.actor.ActorKilledException{% if newrelic_custom_errors not in (None, "") %}, {{ newrelic_custom_errors }} {% endif %}
+    ignore_status_codes: 404{% if newrelic_custom_error_codes not in (None, "") %},{{ newrelic_custom_error_codes }} {% endif %}
 
   transaction_events:
     enabled: true
