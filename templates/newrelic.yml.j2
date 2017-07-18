@@ -50,8 +50,8 @@ common: &default_settings
 
   error_collector:
     enabled: true
-    ignore_errors: akka.actor.ActorKilledException {% if newrelic_custom_errors not in (None, "") %}, {{ newrelic_custom_errors }} {% endif %}
-    ignore_status_codes: 404 {% if newrelic_custom_error_codes not in (None, "") %}, {{ newrelic_custom_error_codes }} {% endif %}
+    ignore_errors: akka.actor.ActorKilledException{% if newrelic_custom_errors not in (None, "") %}, {{ newrelic_custom_errors }} {% endif %}
+    ignore_status_codes: 404{% if newrelic_custom_error_codes not in (None, "") %},{{ newrelic_custom_error_codes }} {% endif %}
 
   transaction_events:
     enabled: true
