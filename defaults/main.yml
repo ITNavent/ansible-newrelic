@@ -47,3 +47,6 @@ mon_mysql_log_level: info
 
 mon_mysql_db_agents:
   - { db_host: 'localhost', db_name: 'mysql', db_user: 'root', db_pass: 'toor' }
+  
+newrelic_custom_errors: ""
+newrelic_custom_error_codes: ""
