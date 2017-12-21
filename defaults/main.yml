@@ -15,7 +15,7 @@ mon_server_rpm: 'https://download.newrelic.com/pub/newrelic/el5/i386/newrelic-re
 monitor_apm: false
 
 mon_apm_url: 'http://download.newrelic.com/newrelic/java-agent/newrelic-agent'
-mon_apm_version: current # See http://download.newrelic.com/newrelic/java-agent/newrelic-agent/ for other versions
+mon_apm_version: 3.45.0 # See http://download.newrelic.com/newrelic/java-agent/newrelic-agent/ for other versions
 mon_apm_file: 'newrelic-java.zip'
 
 mon_apm_download: '{{ mon_apm_url }}/{{ mon_apm_version }}/{{ mon_apm_file }}'
