@@ -7,12 +7,6 @@
   when: monitor_server
   tags: ['newrelic', 'newrelic_server']
 
-- name: Wait for /var/lib/dpkg/lock release
-  become: yes
-  wait_for:
-    path: /var/lib/dpkg/lock
-    state: absent
-
 - name: Install unzip
   apt:
     name: unzip
