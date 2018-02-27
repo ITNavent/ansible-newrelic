@@ -1,6 +1,8 @@
 ---
 - name: APM | Download the Java agent
-  command: 'wget {{mon_apm_download}} -P {{ base_path }}'
+  get_url:
+    url: "{{mon_apm_download}}"
+    dest: "{{ base_path }}/{{ mon_apm_file }}"
   tags: ['newrelic', 'newrelic_apm', 'newrelic_apm_download']
 
 - name: APM | Extract the Java agent

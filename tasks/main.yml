@@ -7,6 +7,9 @@
   when: monitor_server
   tags: ['newrelic', 'newrelic_server']
 
+- name: Wait for automatic system updates
+  shell: while sudo fuser /var/lib/dpkg/lock >/dev/null 2>&1; do sleep 1; done;
+
 - name: Install unzip
   apt:
     name: unzip
