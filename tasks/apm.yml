@@ -17,5 +17,10 @@
 - name: Change ownership NewRelic Folder
   file: path={{ newrelic_path }} owner=ubuntu group=ubuntu
 
+- name: Remove NewRelic agent downloaded file
+  file:
+    state: absent
+    path: "{{base_path}}/{{ mon_apm_file }}"
+
 #- debug: msg='Remember to add the javaagent to your JVM environment variables'
 #- debug: msg='-javaagent: {{ mon_apm_jar_path }}'
