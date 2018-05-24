@@ -11,7 +11,7 @@
   tags: ['newrelic', 'newrelic_apm']
 
 - name: APM | Configure the Java agent
-  template: src=newrelic.yml.j2 dest={{ newrelic_path }}/newrelic.yml
+  template: src={{ template_apm }} dest={{ newrelic_path }}/newrelic.yml
   tags: ['newrelic', 'newrelic_apm']
 
 - name: Change ownership NewRelic Folder

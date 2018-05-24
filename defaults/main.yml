@@ -1,6 +1,7 @@
 ---
 base_path: '/opt'
 newrelic_path: '{{ base_path }}/newrelic'
+template_apm: newrelic.yml.j2
 
 # SERVER MONITOR VARS
 monitor_server: false
