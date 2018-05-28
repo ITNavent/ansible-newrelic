@@ -5,6 +5,11 @@
     dest: "{{ base_path }}/{{ mon_apm_file }}"
   tags: ['newrelic', 'newrelic_apm', 'newrelic_apm_download']
 
+- name: Remove old New Relic agent directory
+  file:
+    state: absent
+    path: "{{newrelic_path}}"
+
 - name: APM | Extract the Java agent
   command: "unzip -o {{base_path}}/{{ mon_apm_file }} -d {{ base_path }}"
 # unarchive: remote_src=yes src="{{base_path}}/{{ mon_apm_file }}" dest={{ base_path }}
