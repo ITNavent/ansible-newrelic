@@ -27,7 +27,7 @@ mon_apm_jar_path: '{{ newrelic_path }}/newrelic.jar'
 
 mon_apm_appname: 'My Application'
 
-mon_enable_auto_transaction_naming: true
+mon_enable_auto_transaction_naming: "true"
 
 # PLUGIN MONITORS VARS
 # NGINX
