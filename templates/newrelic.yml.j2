@@ -102,7 +102,7 @@ common: &default_settings
 {% for key, value in newrelic_environments.iteritems() %}
 {{ key }}:
   <<: *default_settings
-  {{ value }}
+  {{ value | to_nice_yaml }}
 {% endfor %}
 
 development:
