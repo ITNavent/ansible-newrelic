@@ -54,4 +54,5 @@ mon_mysql_db_agents:
 newrelic_custom_errors: ""
 newrelic_custom_error_codes: ""
 
+nr_license: ""
 newrelic_environments: {}
