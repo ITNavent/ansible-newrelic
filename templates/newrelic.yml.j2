@@ -102,20 +102,5 @@ common: &default_settings
 {% for key, value in newrelic_environments.iteritems() %}
 {{ key }}:
   <<: *default_settings
-  {{ value | to_nice_yaml }}
+  {{ value | to_nice_yaml | indent(2) }}
 {% endfor %}
-
-development:
-  <<: *default_settings
-  app_name: My Application (Development)
-
-test:
-  <<: *default_settings
-  app_name: My Application (Test)
-
-production:
-  <<: *default_settings
-
-staging:
-  <<: *default_settings
-  app_name: My Application (Staging)
