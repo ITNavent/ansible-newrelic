@@ -26,6 +26,7 @@ common: &default_settings
   #proxy_port: 8080
   #proxy_user: username
   #proxy_password: password
+  #proxy_scheme: https
   max_stack_trace_lines: 30
   attributes:
     enabled: true
@@ -56,6 +57,9 @@ common: &default_settings
   transaction_events:
     enabled: true
     max_samples_stored: 2000
+
+  distributed_tracing:
+    enabled: {{ enable_distributed_tracing }}
 
   cross_application_tracer:
     enabled: true
